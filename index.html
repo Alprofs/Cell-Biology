@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cell Biology Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- شاشة الرئيسية -->
+        <div id="home-screen" class="screen active">
+            <h1 style="color:#2196F3; font-size: 35px; margin-bottom: 10px; text-align: center;">Cell Biology<br>Master</h1>
+            <div id="lectures-list" style="width: 100%; max-width: 500px;">
+                <!-- سيتم حقن الأقسام هنا بواسطة الجافاسكربت -->
+            </div>
+        </div>
+
+        <!-- شاشة المراجعة -->
+        <div id="revision-screen" class="screen">
+            <div class="rev-header">
+                <h2 id="rev-title" style="margin:0; color:#2196F3; font-size: 24px;">المراجعة</h2>
+                <span class="close-btn" onclick="goHome()">✕</span>
+            </div>
+            <div id="mindmap-board" class="mindmap-board"></div>
+        </div>
+
+        <!-- شاشة الكويز -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <span class="close-btn" onclick="goHome()">✕</span>
+                <div class="progress-bar-bg"><div id="bar" class="progress-bar-fill"></div></div>
+                <div id="counter" style="font-weight: 800; min-width: 60px; font-size: 18px; direction: ltr; text-align: center;">0/0</div>
+            </div>
+            <div id="round-info">الجولة (1)</div>
+            <div class="question-box">
+                <div id="q-txt">...</div>
+            </div>
+            <div class="options-container" id="opt-box"></div>
+            <div class="footer">
+                <button id="prev-btn" class="nav-btn prev" onclick="goPrev()">السابق</button>
+                <button id="next-btn" class="nav-btn next" onclick="goNext()">التالي</button>
+            </div>
+        </div>
+
+        <!-- شاشة الفوز -->
+        <div id="win-overlay" class="overlay">
+            <div class="dialog">
+                <h1 style="color: var(--btn-green); font-size: 45px; margin: 0 0 15px 0;">بطل! 🎉</h1>
+                <p id="win-msg" style="font-size: 22px; font-weight: 800; color: #333; margin-bottom: 30px;">تم إنهاء الأسئلة بنجاح.</p>
+                <button id="home-btn" class="btn-main" style="width: 100%; box-shadow: 0 6px 0 var(--btn-green-dark);" onclick="goHome(); document.getElementById('win-overlay').style.display='none';">الرئيسية</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="lang-fab" onclick="toggleLanguage()">EN</button>
+    
+    
+    <script>
+        let allLectures = [];
+    </script>
+
+    <!-- ملفات البيانات (تم تقسيمها للفرعين) -->
+    <!-- Biochemistry -->
+    <script src="data_biochem1.js"></script>
+    <script src="data_biochem2.js"></script>
+    <script src="data_biochem3.js"></script>
+    <script src="data_biochem4.js"></script>
+    <script src="data_biochem5.js"></script>
+    <!-- Cytology -->
+    <script src="data_cyto1.js"></script>
+    <script src="data_cyto2.js"></script>
+    <script src="data_cyto3.js"></script>
+    <script src="data_cyto4.js"></script>
+    <script src="data_cyto5.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
