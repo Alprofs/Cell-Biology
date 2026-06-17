@@ -214,12 +214,12 @@ allLectures.push({
         {
             q: { ar: "(صح/خطأ) الإنزيم *RNA polymerases* مطلوب لعملية التضاعف (replication).", en: "(True/False) *RNA polymerases enzyme* is required for replication." },
             opts: { ar: ["صح (True)", "خطأ (False)"], en: ["True", "False"] },
-            correct: 1
+            correct: 0
         },
         {
             q: { ar: "(صح/خطأ) *Ribonucleotides* مطلوبة لعملية الترجمة (translation).", en: "(True/False) *Ribonucleotides* are required for translation." },
             opts: { ar: ["صح (True)", "خطأ (False)"], en: ["True", "False"] },
-            correct: 1
+            correct: 0
         },
         {
             q: { ar: "(صح/خطأ) *Ribonucleotides* مطلوبة (وحدها) لعملية التضاعف (replication).", en: "(True/False) *Ribonucleotides* are required for replication." },
